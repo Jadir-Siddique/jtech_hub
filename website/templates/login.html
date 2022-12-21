@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/custom/style.css')}}">
+    <title>{% block title %} Login {% endblock %}</title>    
+         
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+                {% block content %}
+                <form action="" method="POST">
+                    <div class="input-field">
+                        <input name="email" id="email" type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input name="password" id="password" type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+    
+                    <div class="input-field button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='assets/custom/script.js')}}"></script>
+</body>
+</html>

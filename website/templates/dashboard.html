@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-layout-mode="dark" data-layout-width="fluid" data-layout-position="fixed" data-layout-style="default">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='assets/home/style.css')}}">
+        <link href="{{url_for('static', filename='assets/libs/swiper/swiper-bundle.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{url_for('static', filename='assets/js/layout.js')}}"></script>
+        <title>{% block title %} Dashboard {% endblock %}</title>    
+    </head>
+    <body>
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+    
+            <header id="page-topbar">
+                <div class="layout-width">
+                    <div class="navbar-header">
+                        <div class="d-flex">
+                            <!-- LOGO -->
+                            <div class="navbar-brand-box horizontal-logo">
+                                <a href="index.html" class="logo logo-dark">
+                                    <span class="logo-sm">
+                                        <img src="{{url_for('static', filename='assets/images/logo-sm.png')}}" alt="" height="22">
+                                    </span>
+                                    <span class="logo-lg">
+                                        <img src="{{url_for('static', filename='assets/images/logo-dark.png')}}" alt="" height="17">
+                                    </span>
+                                </a>
+    
+                                <a href="index.html" class="logo logo-light">
+                                    <span class="logo-sm">
+                                        <img src="{{url_for('static', filename='assets/images/logo-sm.png')}}" alt="" height="22">
+                                    </span>
+                                    <span class="logo-lg">
+                                        <img src="{{url_for('static', filename='assets/images/j-tech/j-tech-hub-high-resolution-color-logo-removebg-preview.png')}}" alt="" height="17">
+                                    </span>
+                                </a>
+                            </div>
+    
+                            <!-- App Search-->
+                            <form class="app-search d-none d-md-block">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control" placeholder="Search..." autocomplete="off"
+                                        id="search-options" value="">
+                                    <span class="mdi mdi-magnify search-widget-icon"></span>
+                                    <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
+                                        id="search-close-options"></span>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+                                    <div data-simplebar style="max-height: 320px;">
+                                        <!-- item-->
+                                        <div class="dropdown-header">
+                                            <h6 class="text-overflow text-muted mb-0 text-uppercase">Recent Searches</h6>
+                                        </div>
+    
+                                        <div class="dropdown-item bg-transparent text-wrap">
+                                            <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">how to
+                                                setup <i class="mdi mdi-magnify ms-1"></i></a>
+                                            <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">buttons
+                                                <i class="mdi mdi-magnify ms-1"></i></a>
+                                        </div>
+                                        <!-- item-->
+                                        <div class="dropdown-header mt-2">
+                                            <h6 class="text-overflow text-muted mb-1 text-uppercase">Pages</h6>
+                                        </div>
+    
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <i class="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
+                                            <span>Analytics Dashboard</span>
+                                        </a>
+    
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <i class="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
+                                            <span>Help Center</span>
+                                        </a>
+    
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <i class="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
+                                            <span>My account settings</span>
+                                        </a>
+    
+                                        <!-- item-->
+                                        <div class="dropdown-header mt-2">
+                                            <h6 class="text-overflow text-muted mb-2 text-uppercase">Members</h6>
+                                        </div>
+    
+                                        <div class="notification-list">
+                                            <!-- item -->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                                <div class="d-flex">
+                                                    <img src="{{url_for('static', filename='assets/images/users/avatar-2.jpg')}}"
+                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <div class="flex-1">
+                                                        <h6 class="m-0">Angela Bernier</h6>
+                                                        <span class="fs-11 mb-0 text-muted">Manager</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- item -->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                                <div class="d-flex">
+                                                    <img src="{{url_for('static', filename='assets/images/users/avatar-3.jpg')}}"
+                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <div class="flex-1">
+                                                        <h6 class="m-0">David Grasso</h6>
+                                                        <span class="fs-11 mb-0 text-muted">Web Designer</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- item -->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                                <div class="d-flex">
+                                                    <img src="{{url_for('static', filename='assets/images/users/avatar-5.jpg')}}"
+                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <div class="flex-1">
+                                                        <h6 class="m-0">Mike Bunch</h6>
+                                                        <span class="fs-11 mb-0 text-muted">React Developer</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+    
+                                    <div class="text-center pt-3 pb-1">
+                                        <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results
+                                            <i class="ri-arrow-right-line ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <div class="d-flex align-items-center">
+    
+                            <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                                <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                    id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="bx bx-search fs-22"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                    aria-labelledby="page-header-search-dropdown">
+                                    <form class="p-3">
+                                        <div class="form-group m-0">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search ..."
+                                                    aria-label="Recipient's username">
+                                                <button class="btn btn-primary" type="submit"><i
+                                                        class="mdi mdi-magnify"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+    
+                            <div class="dropdown topbar-head-dropdown ms-1 header-item">
+                                <a href="{{url_for('views.cart')}}">
+                                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                        id="page-header-cart-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-shopping-bag fs-22'></i>
+                                    </button>
+                                </a>
+                                
+                            </div>
+    
+                            
+
+                            <div class="dropdown ms-sm-3 header-item topbar-user">
+                                <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="d-flex align-items-center">
+                                        <!-- <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar"> -->
+                                        <span class="text-start ms-xl-2">
+                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Jadir Siddique</span>
+                                            <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
+                                        </span>
+                                    </span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <!-- item-->
+                                    <h6 class="dropdown-header">Welcome Jadir!</h6>
+                                    <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                    
+                                    
+                                    
+                                    <div class="dropdown-divider"></div>
+                                    
+                                    
+                                    
+                                    <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- ========== App Menu ========== -->
+            <div class="app-menu navbar-menu">
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <!-- Light Logo-->
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="{{url_for('static', filename='assets/images/logo-sm.png')}}" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="{{url_for('static', filename='assets/images/j-tech/j-tech-hub-high-resolution-color-logo-removebg-preview.png')}}" alt="logo light"  height="120" width="160">
+                        </span>
+                    </a>
+                    <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                        id="vertical-hover">
+                        <i class="ri-record-circle-line"></i>
+                    </button>
+                </div>
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/gg" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i><span data-key="t-dashboards">Laptop</span>
+                                </a>
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Monitor</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Phone</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Gaming</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Desktop</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Accesories</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Audio</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Peripherals</span>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Cameras</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/end" 
+                                    role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                    <i class="ri-stack-line"></i>  <span data-key="t-dashboards">Office</span>
+                                </a>
+                            </li>
+                            
+                            <!-- end Dashboard Menu -->
+    
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+    
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                <div class="page-content">
+                    <div class="container-fluid">
+    
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0">Products</h4>
+    
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
+                                            <li class="breadcrumb-item active">Products</li>
+                                        </ol>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+    
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-8">
+                                <div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">
+                                                                All 
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div id="selection-element">
+                                                        <div class="my-n1 d-flex align-items-center text-muted">
+                                                            Select <div id="select-content" class="text-body fw-semibold px-1"></div> Result <button type="button" class="btn btn-link link-danger p-0 ms-3" data-bs-toggle="modal" data-bs-target="#removeItemModal">Remove</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end card header -->
+                                        <div class="card-body">
+    
+                                            <div class="tab-content text-muted">
+                                                <div class="tab-pane active" id="productnav-all" role="tabpanel">
+                                                    <div id="table-product-list-all" class="table-card gridjs-border-none">
+                                                        <div role="complementary" class="gridjs gridjs-container" style="width: 100%;">
+                                                            <div class="gridjs-wrapper" style="height: auto;">
+                                                                <table role="grid" class="gridjs-table" style="height: auto;">
+                                                                    <thead class="gridjs-thead"><tr class="gridjs-tr">
+                                                                        <th data-column-id="#" class="gridjs-th text-muted" style="width: 40px;">
+                                                                            <div class="gridjs-th-content">
+                                                                                #
+                                                                            </div>
+                                                                        </th>
+                                                                        <th data-column-id="product" class="gridjs-th gridjs-th-sort text-muted" tabindex="0" style="width: 360px;">
+                                                                            <div class="gridjs-th-content">
+                                                                                Product
+                                                                            </div>
+                                                                        </th>
+                                                                        
+                                                                        <th data-column-id="price" class="gridjs-th gridjs-th-sort text-muted" tabindex="0" style="width: 101px;">
+                                                                            <div class="gridjs-th-content">
+                                                                                Price                           
+                                                                            </div>
+                                                                        </th>
+                                                                        <th data-column-id="stock" class="gridjs-th gridjs-th-sort text-muted" tabindex="0" style="width: 84px;">
+                                                                            <div class="gridjs-th-content">
+                                                                                Stock
+                                                                            </div>
+                                                                        </th>
+                                                                        <th data-column-id="rating" class="gridjs-th gridjs-th-sort text-muted" tabindex="0" style="width: 105px;">
+                                                                            <div class="gridjs-th-content">
+                                                                                Rating
+                                                                            </div>
+                                                                        </th>
+                                                                        
+                                                                        <th data-column-id="action" class="gridjs-th text-muted" style="width: 80px;">
+                                                                            <div class="gridjs-th-content">
+                                                                                Action
+                                                                            </div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="gridjs-tbody">
+                                                                    <tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td">
+                                                                        <span>
+                                                                            <div class="form-check checkbox-product-list">
+                                                                                <input class="form-check-input" type="checkbox" value="1" id="checkbox-1">
+                                                                                	<label class="form-check-label" for="checkbox-1"></label>
+                                                                            </div>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td data-column-id="product" class="gridjs-td">
+                                                                        <span>
+                                                                            <div class="d-flex align-items-center">
+                                                                                <div class="flex-shrink-0 me-3">
+                                                                                    <div class="avatar-sm bg-light rounded p-1">
+                                                                                        <img src="{{url_for('static', filename='assets/images/j-tech/laptop/macbook-47619.png')}}" alt="" class="img-fluid d-block">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="flex-grow-1"><h5 class="fs-14 mb-1">
+                                                                                    <a href="apps-ecommerce-product-details.html" class="text-dark">
+                                                                                        Apple MacBook Pro 16-Inch M1 10th Gen Core i7, Space Gray 
+                                                                                    </a>
+                                                                                    </h5>
+                                                                                    <p class="text-muted mb-0">Category : <span class="fw-medium">
+                                                                                        Laptop
+                                                                                    </span>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </span>
+                                                                    </td>
+                                                                    
+                                                                    <td data-column-id="price" class="gridjs-td">
+                                                                        <span>
+                                                                            2,92,000৳
+                                                                        </span>
+                                                                    </td>
+                                                                    <td data-column-id="stock" class="gridjs-td">
+                                                                        48
+                                                                    </td>
+                                                                    <td data-column-id="rating" class="gridjs-td">
+                                                                        <span>
+                                                                            <span class="badge bg-light text-body fs-12 fw-medium">
+                                                                                <i class="mdi mdi-star text-warning me-1">
+                                                                                </i>
+                                                                                4.2
+                                                                            </span>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td data-column-id="action" class="gridjs-td">
+                                                                        <span>
+                                                                            <div class="dropdown">
+                                                                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                    <i class="ri-more-fill">
+                                                                                    </i>
+                                                                                </button>
+                                                                                <ul class="dropdown-menu dropdown-menu-end"  >
+                                                                                    <li>
+                                                                                        <a class="dropdown-item" href="apps-ecommerce-product-details.html">
+                                                                                            <i class="ri-eye-fill align-bottom me-2 text-muted"></i>
+                                                                                            Add to Cart
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a class="dropdown-item edit-list" data-edit-id="1" href="apps-ecommerce-add-product.html">
+                                                                                            <i class="ri-pencil-fill align-bottom me-2 text-muted"></i>
+                                                                                            Edit
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="dropdown-divider"></li>
+                                                                                    <li>
+                                                                                        <a class="dropdown-item remove-list" href="#" data-id="1" data-bs-toggle="modal" data-bs-target="#removeItemModal">
+                                                                                            <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
+                                                                                            Delete
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="gridjs-tr">
+                                                                    <td data-column-id="#" class="gridjs-td">
+                                                                        <span>
+                                                                            <div class="form-check checkbox-product-list">
+                                                                                <input class="form-check-input" type="checkbox" value="2" id="checkbox-2">
+                                                                                    <label class="form-check-label" for="checkbox-2"></label>
+                                                                            </div>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/monitor/g24f-23-8-2-500x500.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">GIGABYTE G24F 23.8" 170Hz Full HD IPS Gaming Monitor</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Monitor</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>24,500৳</span></td><td data-column-id="orstockders" class="gridjs-td">30</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.3</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"  ><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="2" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="2" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="3" id="checkbox-3">					<label class="form-check-label" for="checkbox-3"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/phone/iPhone-14-Pro-Max-Deep-Purple.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">iPhone 14 Pro Max</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Phone</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>2,11,679৳</span></td><td data-column-id="stock" class="gridjs-td">48</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.5</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="3" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="3" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="4" id="checkbox-4">					<label class="form-check-label" for="checkbox-4"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/gaming/fifa.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">Sony PlayStation 5 FIFA 2023 Edition</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Gaming</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>87,000৳</span></td><td data-column-id="stock" class="gridjs-td">40</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.2</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="4" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="4" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="5" id="checkbox-5">					<label class="form-check-label" for="checkbox-5"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/desktop/12th-gen-core-i7-12700k-gaming-pc-02-500x500.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark"> Intel 12th Gen Core i7-12700K Gaming PC</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Desktop</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>165,400৳</span></td><td data-column-id="stock" class="gridjs-td">55</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.4</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="5" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="5" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="6" id="checkbox-6">					<label class="form-check-label" for="checkbox-6"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/accessories/apple-usb-type-c-male-to-male-2-meter-white-11579956560.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">Apple USB Type-C Male to Male, 2 Meter, White Charging Cable</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Accessories</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>3,040৳</span></td><td data-column-id="stock" class="gridjs-td">48</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.2</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="6" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="6" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="7" id="checkbox-7">					<label class="form-check-label" for="checkbox-7"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/audio/Dune-Color-Beats-Fit-Pro-True-Wireless-Earbuds-Kim-K-Special-Edition.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">Kim Kardashian Beats Fit Pro Wireless Earbuds - Beats by Dre</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Audio</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>21,095৳</span></td><td data-column-id="stock" class="gridjs-td">45</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.3</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="7" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="7" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="8" id="checkbox-8">					<label class="form-check-label" for="checkbox-8"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/peripherals/m350-lavender-02-500x500.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">Logitech M350 Pebble Bluetooth and Wireless Mouse</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Peripherals</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>2,649৳</span></td><td data-column-id="stock" class="gridjs-td">48</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.2</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="8" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="8" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="9" id="checkbox-9">					<label class="form-check-label" for="checkbox-9"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/cameras/canon-eos-6d-mark-ii-slr-digital-camera-11548148802.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark">Canon EOS 6D Mark II SLR Digital Camera Body</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Cameras</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>136,170৳</span></td><td data-column-id="stock" class="gridjs-td">55</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.3</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="9" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="9" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr><tr class="gridjs-tr"><td data-column-id="#" class="gridjs-td"><span><div class="form-check checkbox-product-list">					<input class="form-check-input" type="checkbox" value="10" id="checkbox-10">					<label class="form-check-label" for="checkbox-10"></label>				  </div></span></td><td data-column-id="product" class="gridjs-td"><span><div class="d-flex align-items-center"><div class="flex-shrink-0 me-3"><div class="avatar-sm bg-light rounded p-1"><img src="{{url_for('static', filename='assets/images/j-tech/office/hp-laserjet-mfp-m442dn-multifunction-mono-laser-11670666612.png')}}" alt="" class="img-fluid d-block"></div></div><div class="flex-grow-1"><h5 class="fs-14 mb-1"><a href="apps-ecommerce-product-details.html" class="text-dark"> HP LaserJet MFP M442dn Multifunction Mono Laser Photocopier</a></h5><p class="text-muted mb-0">Category : <span class="fw-medium">Office</span></p></div></div></span></td><td data-column-id="price" class="gridjs-td"><span>84,630৳</span></td><td data-column-id="stock" class="gridjs-td">60</td><td data-column-id="rating" class="gridjs-td"><span><span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>4.3</span></span></td><td data-column-id="action" class="gridjs-td"><span><div class="dropdown"><button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></button><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="apps-ecommerce-product-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> Add to Cart</a></li><li><a class="dropdown-item edit-list" data-edit-id="10" href="apps-ecommerce-add-product.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li><li class="dropdown-divider"></li><li><a class="dropdown-item remove-list" href="#" data-id="10" data-bs-toggle="modal" data-bs-target="#removeItemModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li></ul></div></span></td></tr></tbody></table></div><div class="gridjs-footer"><div class="gridjs-pagination"><div role="status" aria-live="polite" class="gridjs-summary" title="Page 1 of 2">Showing <b>1</b> to <b>10</b> of <b>12</b> results</div><div class="gridjs-pages"><button tabindex="0" role="button" disabled="" title="Previous" aria-label="Previous" class="">Previous</button><button tabindex="0" role="button" class="gridjs-currentPage" title="Page 1" aria-label="Page 1">1</button><button tabindex="0" role="button" class="" title="Page 2" aria-label="Page 2">2</button><button tabindex="0" role="button" title="Next" aria-label="Next" class="">Next</button></div></div></div><div id="gridjs-temp" class="gridjs-temp"></div></div></div>
+                                                </div>
+                                                <!-- end tab pane -->
+                                               
+                                                <!-- end tab pane -->
+    
+                                                
+                                                <!-- end tab pane -->
+                                            </div>
+                                            <!-- end tab content -->
+    
+                                        </div>
+                                        <!-- end card body -->
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+    
+                    </div>
+                    <!-- container-fluid -->
+                </div>
+    
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> © J-Tech Hub
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Developed by Mir Jadir Siddique, BRACU 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+        </div>
+        <script src="{{url_for('static', filename='assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/feather-icons/feather.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/plugins.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/swiper/swiper-bundle.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/pages/landing.init.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/custom/script.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='assets/libs/choices.js/public/assets/scripts/choices.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='assets/libs/flatpickr/flatpickr.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/jsvectormap/js/jsvectormap.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/jsvectormap/maps/world-merc.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/pages/dashboard-ecommerce.init.js')}}"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <svg id="SvgjsSvg1158" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1159"></defs><polyline id="SvgjsPolyline1160" points="0,0"></polyline><path id="SvgjsPath1161" d="M-1 262.494L-1 262.494L69.7050471029991 262.494L139.4100942059982 262.494L209.1151413089973 262.494L278.8201884119964 262.494L348.5252355149955 262.494L418.2302826179946 262.494L487.9353297209937 262.494L557.6403768239928 262.494L627.3454239269919 262.494L697.050471029991 262.494L766.7555181329901 262.494C766.7555181329901 262.494 766.7555181329901 262.494 766.7555181329901 262.494 "></path></svg>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-layout-mode="dark" data-layout-width="fluid" data-layout-position="fixed" data-layout-style="default">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='assets/home/style.css')}}">
+        <link href="{{url_for('static', filename='assets/libs/swiper/swiper-bundle.min.css')}}" rel="stylesheet" type="text/css" />
+        <script src="{{url_for('static', filename='assets/js/layout.js')}}"></script>
+        <link href="{{url_for('static', filename='assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+        <title>{% block title %} J-Tech Hub - Home {% endblock %}</title>    
+    </head>
+    <body data-bs-spy="scroll" data-bs-target="#navbar-example">
+        <!-- Begin page -->
+        <div class="layout-wrapper landing">
+            <nav class="navbar navbar-expand-lg navbar-landing fixed-top" id="navbar">
+                <div class="container">
+                    <a class="navbar-brand">
+                        <img src="{{url_for('static', filename='assets/images/j-tech/j-tech-hub-high-resolution-color-logo.png')}}" class="card-logo card-logo-light" alt="logo light" height="120" width="160">
+                    </a>
+                    <button class="navbar-toggler py-0 fs-20 text-body collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#hero">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#products">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faq">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+    
+                        <div class="">
+                            <a href="{{url_for('auth.login')}}" class="btn btn-primary" style="background-color: #9933ff; border-color:#252a2e ;">Login</a>
+                            <a href="{{url_for('auth.signup')}}" class="btn btn-primary" style="background-color: #9933ff; border-color:#252a2e ;">Sign Up</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </nav>
+            <!-- end navbar -->
+    
+            <!-- start hero section -->
+            <section class="section pb-0 hero-section" id="hero">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-sm-10">
+                            <div class="text-center mt-lg-5 pt-5">
+                                <h1 class="display-6 fw-semibold mb-3 lh-base">The best way to remedy your technological needs with <h1 class="j" style="color: #9933ff;">J-Tech Hub!</h1></h1>
+                                <p class="lead text-muted lh-base">J-Tech Hub is a fully responsive &amp; premium technology purchasing website. </p>
+    
+                                <div class="d-flex gap-2 justify-content-center mt-4">
+                                    <a href="{{url_for('auth.signup')}}" class="btn btn-primary" style="background-color: #9933ff; border-color:#252a2e ;">Get Started<i class="ri-arrow-right-line align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+    
+                            <div class="mt-4 mt-sm-5 pt-sm-5 mb-sm-n5 demo-carousel">
+                                <div class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                    <div class="carousel-inner shadow-lg p-2">
+                                        <div class="carousel-item carousel-item-next carousel-item-start" data-bs-interval="1000">
+                                            <img src="{{url_for('static', filename='assets/images/j-tech/multiple1.png')}}" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+                <div class="position-absolute start-0 end-0 bottom-0 hero-shape-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                        <g mask="url(&quot;#SvgjsMask1003&quot;)" fill="none">
+                            <path d="M 0,118 C 288,98.6 1152,40.4 1440,21L1440 140L0 140z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <!-- end shape -->
+            </section>
+            <!-- end hero section -->
+    
+            <!-- start client section -->
+            
+            <!-- end client section -->
+    
+            <!-- start services -->
+            
+            <!-- end services -->
+    
+            <!-- start features -->
+            <section class="section bg-light py-5" id="products">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-6 col-sm-7 mx-auto">
+                            <div>
+                                <img src="{{url_for('static', filename='assets/images/j-tech/xbox.png')}}" alt="" class="img-fluid mx-auto">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="text-muted">
+                                <div class="avatar-sm icon-effect mb-4">
+                                    <div class="avatar-title bg-transparent rounded-circle text-success h1">
+                                        <i class="ri-collage-line fs-36"></i>
+                                    </div>
+                                </div>
+                                <h3 class="mb-3 fs-20">Huge collection of Gaming Consoles and Accessories</h3>
+                                <p class="mb-4 ff-secondary fs-16">Xbox Series S, Xbox Series X, Playstation 5, Playstation VR and many more consoles in stock! Accessories including Headphones, Controllers, Steering Wheels, Thumbgrips etc are all available!</p>
+    
+                                <div class="row pt-3">
+                                    <div class="col-3">
+                                        <div class="text-center">
+                                            <h4>10+</h4>
+                                            <p>Consoles</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="text-center">
+                                            <h4>30+</h4>
+                                            <p>Accessories</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="text-center">
+                                            <h4>50+</h4>
+                                            <p>Brands</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </section>
+            <!-- end features -->
+    
+            <!-- start cta -->
+            
+            <!-- end cta -->
+    
+            <!-- start features -->
+            <section class="section">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-6 order-2 order-lg-1">
+                            <div class="text-muted">
+                                <h5 class="fs-12 text-uppercase text-success">Components</h5>
+                                <h4 class="mb-3">Top Quality PC Modules</h4>
+                                <p class="mb-4 ff-secondary">Starting from PC Casings to CPU Coolers, we have them all! Every single one of our products are authentic and we are working to ensure that all of our items are non-defective and reaches our soon-to-be loyal customers on time!</p>
+    
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="vstack gap-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="avatar-xs icon-effect">
+                                                        <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                            <i class="ri-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="fs-14 mb-0">Motherboard</h5>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="avatar-xs icon-effect">
+                                                        <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                            <i class="ri-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="fs-14 mb-0">RAM</h5>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="avatar-xs icon-effect">
+                                                        <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                            <i class="ri-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="fs-14 mb-0">Graphics Card</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="vstack gap-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="avatar-xs icon-effect">
+                                                        <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                            <i class="ri-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="fs-14 mb-0">Storage</h5>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="avatar-xs icon-effect">
+                                                        <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                            <i class="ri-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="fs-14 mb-0">Monitor</h5>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="avatar-xs icon-effect">
+                                                        <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                            <i class="ri-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="fs-14 mb-0">Peripherals</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <a href="index.html" class="btn btn-primary" style="background-color: #9933ff; border-color:#252a2e ;">Browse Items <i class="ri-arrow-right-line align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-sm-7 col-10 ms-auto order-1 order-lg-2">
+                            <div>
+                                <img src="{{url_for('static', filename='assets/images/j-tech/pc.png')}}" alt="" class="img-fluid" style="padding-left: 50px;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+    
+                    <div class="row align-items-center mt-5 pt-lg-5 gy-4">
+                        <div class="col-lg-6 col-sm-7 col-10 mx-auto">
+                            <div>
+                                <img src="{{url_for('static', filename='assets/images/j-tech/iPhone14.png')}}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="text-muted ps-lg-5">
+                                <h5 class="fs-12 text-uppercase text-success">Mobile Phones</h5>
+                                <h4 class="mb-3">iPhone 14</h4>
+                                <p class="mb-4">Introducing the latest product from Apple, the iPhone 14! Advanced Dual-Camera System with 12MP and ultrawide mode! Get upto 26 hours of video playback with a higher capacity battery. Starting at 799$ only!  </p>
+    
+                                <div class="vstack gap-2">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2">
+                                            <div class="avatar-xs icon-effect">
+                                                <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                    <i class="ri-check-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">Dynamic Island</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2">
+                                            <div class="avatar-xs icon-effect">
+                                                <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                    <i class="ri-check-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">A16 Bionic Chip</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2">
+                                            <div class="avatar-xs icon-effect">
+                                                <div class="avatar-title bg-transparent text-success rounded-circle h2">
+                                                    <i class="ri-check-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">Car-Crash Detection</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </section>
+            <!-- end features -->
+    
+            <!-- start plan -->
+            
+            <!-- end plan -->
+    
+            <!-- start faqs -->
+            <section class="section" id="faq">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="text-center mb-5">
+                                <h3 class="mb-3 fw-semibold">Frequently Asked Questions</h3>
+                                <p class="text-muted mb-4 ff-secondary">If you can not find answer to your question in our FAQ, you can always contact us or email us. We will answer you shortly!</p>
+    
+                                <div class="" >
+                                    <button type="button" class="btn btn-primary btn-label rounded-pill"><i class="ri-mail-line label-icon align-middle rounded-pill fs-16 me-2" style="background-color: #9933ff; border-color:#252a2e ;"></i> Email Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+    
+                    <div class="row g-lg-5 g-4">
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="flex-shrink-0 me-1">
+                                    <i class="ri-question-line fs-24 align-middle text-success me-1"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-0 fw-semibold">General Questions</h5>
+                                </div>
+                            </div>
+                            <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box" id="genques-accordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="genques-headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#genques-collapseOne" aria-expanded="true" aria-controls="genques-collapseOne">
+                                            Why will I use this website as opposed to StarTech or RyanComputers?
+                                        </button>
+                                    </h2>
+                                    <div id="genques-collapseOne" class="accordion-collapse collapse show" aria-labelledby="genques-headingOne" data-bs-parent="#genques-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            The website is interactive, yet less congested and ad-free. Making a decision on what to purchase will be facilitated with the help of the advanced integrated categories and filters. Comparisons between products will be easier as well. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="genques-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genques-collapseTwo" aria-expanded="false" aria-controls="genques-collapseTwo">
+                                            Is this website mobile-friendly?
+                                        </button>
+                                    </h2>
+                                    <div id="genques-collapseTwo" class="accordion-collapse collapse" aria-labelledby="genques-headingTwo" data-bs-parent="#genques-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Yes, the website is compatible with multiple devices using different aspect ratios.  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="genques-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genques-collapseThree" aria-expanded="false" aria-controls="genques-collapseThree">
+                                            Will I receive authentic products instead of faulty and defective?
+                                        </button>
+                                    </h2>
+                                    <div id="genques-collapseThree" class="accordion-collapse collapse" aria-labelledby="genques-headingThree" data-bs-parent="#genques-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Yes, we ensure 100% authenticity of the products. We also provide 30 day return policy for any faulty or defective products.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="genques-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genques-collapseThree" aria-expanded="false" aria-controls="genques-collapseThree">
+                                            Do you have warranty on our products?
+                                        </button>
+                                    </h2>
+                                    <div id="genques-collapseThree" class="accordion-collapse collapse" aria-labelledby="genques-headingThree" data-bs-parent="#genques-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Yes, we have warranties which will be provided to you upon purchase. You can also purchase brand warranty that comes with the product itself.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end accordion-->
+    
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="flex-shrink-0 me-1">
+                                    <i class="ri-shield-keyhole-line fs-24 align-middle text-success me-1"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-0 fw-semibold">Security &amp; QoL</h5>
+                                </div>
+                            </div>
+    
+                            <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box" id="privacy-accordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="privacy-headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#privacy-collapseOne" aria-expanded="false" aria-controls="privacy-collapseOne">
+                                            Will my personal information be safely stored?
+                                        </button>
+                                    </h2>
+                                    <div id="privacy-collapseOne" class="accordion-collapse collapse" aria-labelledby="privacy-headingOne" data-bs-parent="#privacy-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Yes, we encrypt all the personal information of our customers. We do not share information with any third parties.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="privacy-headingTwo">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#privacy-collapseTwo" aria-expanded="true" aria-controls="privacy-collapseTwo">
+                                            Can I view the orders I have made and track them in real time?
+                                        </button>
+                                    </h2>
+                                    <div id="privacy-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="privacy-headingTwo" data-bs-parent="#privacy-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Orders completed in the past can be viewed in the "My Orders" section. Package tracking is something we haven't implemented yet, but will be in the near future.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="privacy-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#privacy-collapseThree" aria-expanded="false" aria-controls="privacy-collapseThree">
+                                            Can I cancel my order?
+                                        </button>
+                                    </h2>
+                                    <div id="privacy-collapseThree" class="accordion-collapse collapse" aria-labelledby="privacy-headingThree" data-bs-parent="#privacy-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Orders can be cancelled within 3 days of placing it. After that, the order cannot be cancelled. However, we will make exceptions depending on the situation and reasoning of our customers.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="privacy-headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#privacy-collapseFour" aria-expanded="false" aria-controls="privacy-collapseFour">
+                                            Can I add items into a wishlist and view it later?
+                                        </button>
+                                    </h2>
+                                    <div id="privacy-collapseFour" class="accordion-collapse collapse" aria-labelledby="privacy-headingFour" data-bs-parent="#privacy-accordion">
+                                        <div class="accordion-body ff-secondary">
+                                            Yes, a wishlist will be available if the customer wants to save something to purchase for later.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end accordion-->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </section>
+            <!-- end faqs -->
+    
+            <!-- start review -->
+            
+            <!-- end review -->
+    
+            <!-- start counter -->
+            
+            <!-- end counter -->
+    
+            <!-- start Work Process -->
+            
+            <!-- end Work Process -->
+    
+            <!-- start team -->
+            
+            <!-- end team -->
+    
+            <!-- start contact -->
+            <section class="section" id="contact">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="text-center mb-5">
+                                <h3 class="mb-3 fw-semibold">Get In Touch</h3>
+                                <p class="text-muted mb-4 ff-secondary">Contact Us for further queries regarding our website, order information and about our policies. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+    
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <div>
+                                <div class="mt-4">
+                                    <h5 class="fs-13 text-muted text-uppercase">Office Address:</h5>
+                                    <div class="ff-secondary fw-semibold">Gulshan-1 <br> Random Tower</div>
+                                </div>
+        
+                                <div class="mt-4">
+                                    <h5 class="fs-13 text-muted text-uppercase">Working Hours:</h5>
+                                    <div class="ff-secondary fw-semibold">8:00am to 6:00pm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-8">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-4">
+                                                <label for="name" class="form-label fs-13">Name</label>
+                                                <input name="name" id="name" type="text" class="form-control bg-light border-light" placeholder="Your name*">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="mb-4">
+                                                <label for="email" class="form-label fs-13">Email</label>
+                                                <input name="email" id="email" type="email" class="form-control bg-light border-light" placeholder="Your email*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="mb-4">
+                                                <label for="subject" class="form-label fs-13">Subject</label>
+                                                <input type="text" class="form-control bg-light border-light" id="subject" name="subject" placeholder="Your Subject..">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label for="comments" class="form-label fs-13">Message</label>
+                                                <textarea name="comments" id="comments" rows="3" class="form-control bg-light border-light" placeholder="Your message..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 text-end">
+                                            <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Send Message" style="background-color: #9933ff; border-color:#252a2e ;">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </section>
+            <!-- end contact -->
+    
+            <!-- start cta -->
+            
+            <!-- end cta -->
+    
+            <!-- Start footer -->
+            <footer class="custom-footer bg-dark py-5 position-relative">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 mt-4">
+                            <div>
+                                <div>
+                                    <img src="{{url_for('static', filename='assets/images/j-tech/j-tech-hub-high-resolution-color-logo.png')}}" class="card-logo card-logo-light" alt="logo light" height="120" width="160">
+                                </div>
+                                <div class="mt-4 fs-13">
+                                    <p>Premium Interactive &amp; Responsive Website</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+    
+                    </div>
+    
+                    <div class="row text-center text-sm-start align-items-center mt-5">
+                        <div class="col-sm-6">
+    
+                            <div>
+                                <p class="copy-rights mb-0">
+                                    <script> document.write(new Date().getFullYear()) </script> © J-Tech Hub 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end mt-3 mt-sm-0">
+                                <ul class="list-inline mb-0 footer-social-link">
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-facebook-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-github-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-linkedin-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-google-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-dribbble-line"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+    
+        </div>
+        <!-- end layout wrapper -->
+        <script src="{{url_for('static', filename='assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/feather-icons/feather.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/plugins.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/libs/swiper/swiper-bundle.min.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/js/pages/landing.init.js')}}"></script>
+        <script src="{{url_for('static', filename='assets/custom/script.js')}}"></script>
+    </body>
+</html>
+
